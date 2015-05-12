@@ -1,0 +1,247 @@
+	public static void eventMake()
+	{
+
+		// Desc2 
+		PhotoshopTypeLibrary.IActionDescriptor Desc2 = PSX.MakeNewDescriptor();
+
+		Desc2.PutClass(  (int) con.phKeyMode ,  (int) con.phClassRGBColorMode ); 
+		Desc2.PutUnitDouble(  (int) con.phKeyWidth ,  (int) con.phUnitDistance ,  300 ); 
+		Desc2.PutUnitDouble(  (int) con.phKeyHeight ,  (int) con.phUnitDistance ,  200 ); 
+		Desc2.PutUnitDouble(  (int) con.phKeyResolution ,  (int) con.phUnitDensity ,  100 ); 
+		Desc2.PutEnumerated(  (int) con.phKeyFill ,  (int) con.phTypeFill ,  (int) con.phEnumWhite ); 
+
+		// Desc1 
+		PhotoshopTypeLibrary.IActionDescriptor Desc1 = PSX.MakeNewDescriptor();
+
+		Desc1.PutObject(  (int) con.phKeyNew ,  (int) con.phClassDocument ,  Desc2 ); 
+
+		// Play the event in photoshop
+		PSX.PlayEvent( (int) con.phEventMake , Desc1 , (int)con.phDialogSilent, PSX.PlayBehavior.checknone );
+	}
+
+
+	public static void eventGaussianBlur()
+	{
+
+		// Desc1 
+		PhotoshopTypeLibrary.IActionDescriptor Desc1 = PSX.MakeNewDescriptor();
+
+		Desc1.PutUnitDouble(  (int) con.phKeyRadius ,  (int) con.phUnitPixels ,  3 ); 
+
+		// Play the event in photoshop
+		PSX.PlayEvent( (int) con.phEventGaussianBlur , Desc1 , (int)con.phDialogSilent, PSX.PlayBehavior.checknone );
+	}
+
+
+	public static void eventIntersectWith()
+	{
+
+		// Desc2 
+		PhotoshopTypeLibrary.IActionDescriptor Desc2 = PSX.MakeNewDescriptor();
+
+		Desc2.PutUnitDouble(  (int) con.phKeyTop ,  (int) con.phUnitDistance ,  23 ); 
+		Desc2.PutUnitDouble(  (int) con.phKeyLeft ,  (int) con.phUnitDistance ,  31 ); 
+		Desc2.PutUnitDouble(  (int) con.phKeyBottom ,  (int) con.phUnitDistance ,  64 ); 
+		Desc2.PutUnitDouble(  (int) con.phKeyRight ,  (int) con.phUnitDistance ,  86 ); 
+
+		// Ref1 
+		PhotoshopTypeLibrary.IActionReference Ref1 = PSX.MakeNewReference();
+
+		Ref1.PutProperty(  (int) con.phClassChannel ,  1718838636 ); 
+
+		// Desc1 
+		PhotoshopTypeLibrary.IActionDescriptor Desc1 = PSX.MakeNewDescriptor();
+
+		Desc1.PutReference(  (int) con.phKeyNull ,  Ref1 ); 
+		Desc1.PutObject(  (int) con.phKeyTo ,  (int) con.phClassRectangle ,  Desc2 ); 
+
+		// Play the event in photoshop
+		PSX.PlayEvent( (int) con.phEventIntersectWith , Desc1 , (int)con.phDialogSilent, PSX.PlayBehavior.checknone );
+	}
+
+
+	public static void eventGaussianBlur()
+	{
+
+		// Desc1 
+		PhotoshopTypeLibrary.IActionDescriptor Desc1 = PSX.MakeNewDescriptor();
+
+		Desc1.PutUnitDouble(  (int) con.phKeyRadius ,  (int) con.phUnitPixels ,  22 ); 
+
+		// Play the event in photoshop
+		PSX.PlayEvent( (int) con.phEventGaussianBlur , Desc1 , (int)con.phDialogSilent, PSX.PlayBehavior.checknone );
+	}
+
+
+	public static void eventGaussianBlur()
+	{
+
+		// Desc1 
+		PhotoshopTypeLibrary.IActionDescriptor Desc1 = PSX.MakeNewDescriptor();
+
+		Desc1.PutUnitDouble(  (int) con.phKeyRadius ,  (int) con.phUnitPixels ,  0 ); 
+
+		// Play the event in photoshop
+		PSX.PlayEvent( (int) con.phEventGaussianBlur , Desc1 , (int)con.phDialogSilent, PSX.PlayBehavior.checknone );
+	}
+
+
+	public static void eventGaussianBlur()
+	{
+
+		// Desc1 
+		PhotoshopTypeLibrary.IActionDescriptor Desc1 = PSX.MakeNewDescriptor();
+
+		Desc1.PutUnitDouble(  (int) con.phKeyRadius ,  (int) con.phUnitPixels ,  250 ); 
+
+		// Play the event in photoshop
+		PSX.PlayEvent( (int) con.phEventGaussianBlur , Desc1 , (int)con.phDialogSilent, PSX.PlayBehavior.checknone );
+	}
+
+
+	public static void eventRadialBlur()
+	{
+
+		// Desc1 
+		PhotoshopTypeLibrary.IActionDescriptor Desc1 = PSX.MakeNewDescriptor();
+
+		Desc1.PutInteger(  (int) con.phKeyAmount ,  10 ); 
+		Desc1.PutEnumerated(  (int) con.phKeyBlurMethod ,  (int) con.phTypeBlurMethod ,  (int) con.phEnumSpin ); 
+		Desc1.PutEnumerated(  (int) con.phKeyBlurQuality ,  (int) con.phTypeBlurQuality ,  (int) con.phEnumGood ); 
+
+		// Play the event in photoshop
+		PSX.PlayEvent( (int) con.phEventRadialBlur , Desc1 , (int)con.phDialogSilent, PSX.PlayBehavior.checknone );
+	}
+
+
+	public static void eventRadialBlur()
+	{
+
+		// Desc1 
+		PhotoshopTypeLibrary.IActionDescriptor Desc1 = PSX.MakeNewDescriptor();
+
+		Desc1.PutInteger(  (int) con.phKeyAmount ,  10 ); 
+		Desc1.PutEnumerated(  (int) con.phKeyBlurMethod ,  (int) con.phTypeBlurMethod ,  (int) con.phEnumZoom ); 
+		Desc1.PutEnumerated(  (int) con.phKeyBlurQuality ,  (int) con.phTypeBlurQuality ,  (int) con.phEnumGood ); 
+
+		// Play the event in photoshop
+		PSX.PlayEvent( (int) con.phEventRadialBlur , Desc1 , (int)con.phDialogSilent, PSX.PlayBehavior.checknone );
+	}
+
+
+	public static void eventRadialBlur()
+	{
+
+		// Desc1 
+		PhotoshopTypeLibrary.IActionDescriptor Desc1 = PSX.MakeNewDescriptor();
+
+		Desc1.PutInteger(  (int) con.phKeyAmount ,  10 ); 
+		Desc1.PutEnumerated(  (int) con.phKeyBlurMethod ,  (int) con.phTypeBlurMethod ,  (int) con.phEnumZoom ); 
+		Desc1.PutEnumerated(  (int) con.phKeyBlurQuality ,  (int) con.phTypeBlurQuality ,  (int) con.phEnumDraft ); 
+
+		// Play the event in photoshop
+		PSX.PlayEvent( (int) con.phEventRadialBlur , Desc1 , (int)con.phDialogSilent, PSX.PlayBehavior.checknone );
+	}
+
+
+	public static void eventRadialBlur()
+	{
+
+		// Desc1 
+		PhotoshopTypeLibrary.IActionDescriptor Desc1 = PSX.MakeNewDescriptor();
+
+		Desc1.PutInteger(  (int) con.phKeyAmount ,  10 ); 
+		Desc1.PutEnumerated(  (int) con.phKeyBlurMethod ,  (int) con.phTypeBlurMethod ,  (int) con.phEnumZoom ); 
+		Desc1.PutEnumerated(  (int) con.phKeyBlurQuality ,  (int) con.phTypeBlurQuality ,  (int) con.phEnumBest ); 
+
+		// Play the event in photoshop
+		PSX.PlayEvent( (int) con.phEventRadialBlur , Desc1 , (int)con.phDialogSilent, PSX.PlayBehavior.checknone );
+	}
+
+
+	public static void eventClose()
+	{
+
+		// Desc1 
+		PhotoshopTypeLibrary.IActionDescriptor Desc1 = PSX.MakeNewDescriptor();
+
+		Desc1.PutEnumerated(  (int) con.phKeySaving ,  (int) con.phTypeYesNo ,  (int) con.phEnumNo ); 
+
+		// Play the event in photoshop
+		PSX.PlayEvent( (int) con.phEventClose , Desc1 , (int)con.phDialogSilent, PSX.PlayBehavior.checknone );
+	}
+
+
+	public static void eventNotify()
+	{
+
+		// Desc1 
+		PhotoshopTypeLibrary.IActionDescriptor Desc1 = PSX.MakeNewDescriptor();
+
+		Desc1.PutEnumerated(  (int) con.phKeyWhat ,  (int) con.phTypeNotify ,  (int) con.phEnumFirstIdle ); 
+
+		// Play the event in photoshop
+		PSX.PlayEvent( (int) con.phEventNotify , Desc1 , (int)con.phDialogSilent, PSX.PlayBehavior.checknone );
+	}
+
+
+	public static void eventAddNoise()
+	{
+
+		// Desc1 
+		PhotoshopTypeLibrary.IActionDescriptor Desc1 = PSX.MakeNewDescriptor();
+
+		Desc1.PutEnumerated(  (int) con.phKeyDistortion ,  (int) con.phTypeDistribution ,  (int) con.phEnumUniformDistribution ); 
+		Desc1.PutUnitDouble(  (int) con.phKeyNoise ,  (int) con.phUnitPercent ,  0 ); 
+		Desc1.PutBoolean(  (int) con.phKeyMonochromatic ,  PSX.TRUE ); 
+
+		// Play the event in photoshop
+		PSX.PlayEvent( (int) con.phEventAddNoise , Desc1 , (int)con.phDialogSilent, PSX.PlayBehavior.checknone );
+	}
+
+
+	public static void eventAddNoise()
+	{
+
+		// Desc1 
+		PhotoshopTypeLibrary.IActionDescriptor Desc1 = PSX.MakeNewDescriptor();
+
+		Desc1.PutEnumerated(  (int) con.phKeyDistortion ,  (int) con.phTypeDistribution ,  (int) con.phEnumGaussianDistribution ); 
+		Desc1.PutUnitDouble(  (int) con.phKeyNoise ,  (int) con.phUnitPercent ,  400 ); 
+		Desc1.PutBoolean(  (int) con.phKeyMonochromatic ,  PSX.FALSE ); 
+
+		// Play the event in photoshop
+		PSX.PlayEvent( (int) con.phEventAddNoise , Desc1 , (int)con.phDialogSilent, PSX.PlayBehavior.checknone );
+	}
+
+
+	public static void eventUnsharpMask()
+	{
+
+		// Desc1 
+		PhotoshopTypeLibrary.IActionDescriptor Desc1 = PSX.MakeNewDescriptor();
+
+		Desc1.PutUnitDouble(  (int) con.phKeyAmount ,  (int) con.phUnitPercent ,  1 ); 
+		Desc1.PutUnitDouble(  (int) con.phKeyRadius ,  (int) con.phUnitPixels ,  0 ); 
+		Desc1.PutInteger(  (int) con.phKeyThreshold ,  0 ); 
+
+		// Play the event in photoshop
+		PSX.PlayEvent( (int) con.phEventUnsharpMask , Desc1 , (int)con.phDialogSilent, PSX.PlayBehavior.checknone );
+	}
+
+
+	public static void eventUnsharpMask()
+	{
+
+		// Desc1 
+		PhotoshopTypeLibrary.IActionDescriptor Desc1 = PSX.MakeNewDescriptor();
+
+		Desc1.PutUnitDouble(  (int) con.phKeyAmount ,  (int) con.phUnitPercent ,  500 ); 
+		Desc1.PutUnitDouble(  (int) con.phKeyRadius ,  (int) con.phUnitPixels ,  250 ); 
+		Desc1.PutInteger(  (int) con.phKeyThreshold ,  255 ); 
+
+		// Play the event in photoshop
+		PSX.PlayEvent( (int) con.phEventUnsharpMask , Desc1 , (int)con.phDialogSilent, PSX.PlayBehavior.checknone );
+	}
+
+
